@@ -9,13 +9,12 @@ cask "doppio" do
 
   app "Doppio.app"
 
-  # Auto-installs the CLI tool to /usr/local/bin/doppio
   binary "#{appdir}/Doppio.app/Contents/Resources/doppio"
 
-  # Strip quarantine so macOS doesn't block the app on first launch
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Doppio.app"]
+                   args: ["-dr", "com.apple.quarantine", "/Applications/Doppio.app"],
+                   sudo: false
   end
 
   caveats <<~EOS
@@ -24,6 +23,5 @@ cask "doppio" do
 
     To keep your Mac awake for the lifetime of any command:
       doppio while claude
-      doppio while npm run build
   EOS
 end
