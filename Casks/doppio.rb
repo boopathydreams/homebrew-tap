@@ -1,6 +1,6 @@
 cask "doppio" do
-  version "1.0.4"
-  sha256 "02d4f20cdd479f53fd1ef715a057e7969136fe9d8b4f8973e6440371b91b7897"
+  version "1.0.5"
+  sha256 "0ebd334f48a31ff59574916a0ce914c5f39de205edffe101207a72964a64d7ef"
 
   url "https://github.com/boopathydreams/doppio/releases/download/v#{version}/Doppio.dmg"
   name "Doppio"
