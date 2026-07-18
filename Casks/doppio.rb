@@ -13,11 +13,13 @@ cask "doppio" do
   binary "#{appdir}/Doppio.app/Contents/Resources/doppio"
 
   caveats <<~EOS
+    Doppio is not notarized. If macOS says it's "damaged", run:
+      xattr -dr com.apple.quarantine #{appdir}/Doppio.app
+
+    Or reinstall with:
+      brew install --cask --no-quarantine boopathydreams/tap/doppio
+
     The CLI tool has been symlinked to /usr/local/bin/doppio.
     Run `doppio --help` in Terminal to get started.
-
-    To keep your Mac awake for the lifetime of any command:
-      doppio while claude
-      doppio while npm run build
   EOS
 end
